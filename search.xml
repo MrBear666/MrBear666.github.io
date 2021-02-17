@@ -4,26 +4,19 @@
   
     
     <entry>
-      <title>zz</title>
-      <link href="2021/02/17/zz/"/>
-      <url>2021/02/17/zz/</url>
+      <title>个人博客搭建</title>
+      <link href="2021/02/17/ge-ren-bo-ke-da-jian/"/>
+      <url>2021/02/17/ge-ren-bo-ke-da-jian/</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2021/02/17/hello-world/"/>
-      <url>2021/02/17/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="0x01-基础环境准备"><a href="#0x01-基础环境准备" class="headerlink" title="0x01 基础环境准备"></a>0x01 基础环境准备</h2><h3 id="1、安装Git-Bash"><a href="#1、安装Git-Bash" class="headerlink" title="1、安装Git Bash"></a>1、安装Git Bash</h3><p>Git Bash主要解决——如何在Windows终端使用Linux命令。本文对应的windows环境式windows10，可以下载windows版本并安装。具体的<a href="https://git-scm.com/downloads">下载地址</a></p><ul><li>安装步骤：双击下载好的exe文件，一路next就好啦</li><li>安装好后，打开gitbash，查看版本：</li></ul><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613560483540.png" class="" width="1613560483540"><p>主要命令如下：</p><ul><li>Git CMD：<br>Git中的Bash是基于CMD的，在CMD的基础上增添一些新的命令与功能。</li><li>Git GUI：<br>Git GUI是Git Bash的替代品，他为Windows用户提供了更简便易懂的图形界面。</li><li>Git Bash：<br>Git Bash是命令行操作，主要是在windows环境下执行linux命令。</li></ul><h3 id="2、安装NodeJs"><a href="#2、安装NodeJs" class="headerlink" title="2、安装NodeJs"></a>2、<strong>安装NodeJs</strong></h3><p>nodeJS是一个基于Chrome V8引擎的JavaScript运行环境，使用了一个事件驱动、非阻塞式I/O模型， 让JavaScript 运行在服务端的开发平台，它让JavaScript成为与PHP、Python、Perl、Ruby等服务端语言平起平坐的脚本语言。</p><p>Hexo是基于nodeJS环境的静态博客，里面的npm工具很有用。</p><ul><li><a href="https://nodejs.org/en/">下载地址</a>(说明：LTS为长期支持版，Current为当前最新版)</li><li>安装步骤：下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选 <code>Add to PATH</code> ,这样你就不用自己去配置电脑上环境变量了，装完在按 <code>win + r</code> 快捷键调出运行，然后输入cmd确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量）。</li><li>查看版本：</li></ul><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613561109036.png" class="" width="1613561109036"><h3 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、<strong>安装hexo</strong></h3><p>Hexo 是一个基于nodeJS的静态博客网站生成器。</p><p>后面的东西都是在gitbash中用npm工具安装。</p><ul><li>先创建一个文件夹（用来存放所有blog的东西），然后<code>cd</code>到该文件夹下。</li><li>安装hexo命令：npm i -g hexo</li><li>安装完成后，查看版本：</li></ul><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613561459084.png" class="" width="1613561459084"><ul><li>初始化命令：<code>hexo init</code> ，初始化完成之后打开所在的文件夹可以看到以下文件：</li></ul><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613561529827.png" class="" width="1613561529827"><pre class="line-numbers language-none"><code class="language-none">- node_modules：是依赖包- public：存放的是生成的页面- scaffolds：命令生成文章等的模板- source：用命令创建的各种文章- themes：主题- _config.yml：整个博客的配置- db.json：source解析所得到的- package.json：项目所需模块项目的配置信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>后续的主要相关命令如下：</p><h2 id="0x02-GitHub账号"><a href="#0x02-GitHub账号" class="headerlink" title="0x02 GitHub账号"></a>0x02 GitHub账号</h2><h2 id="0x03-博客主题模板"><a href="#0x03-博客主题模板" class="headerlink" title="0x03 博客主题模板"></a>0x03 博客主题模板</h2><h2 id="0x04-各种问题解决"><a href="#0x04-各种问题解决" class="headerlink" title="0x04 各种问题解决"></a>0x04 各种问题解决</h2><h3 id="1、如何在Hexo博客协作时同步图片"><a href="#1、如何在Hexo博客协作时同步图片" class="headerlink" title="1、如何在Hexo博客协作时同步图片"></a>1、如何在Hexo博客协作时同步图片</h3><p>Typora</p><p>Typora支持将插入的图片文件拷贝到指定路径，通过<code>Typora-&gt;偏好设置-&gt;图像</code>，然后参照下图选择<code>复制到指定路径</code>将图片拷贝到与Markdown文件同名目录下。</p><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613564041751.png" class="" width="1613564041751"><p>这样我们在编辑博客的时候，就可以实时看到插入的图片。可以截图插入，也可以从网页上直接拖拽插入，非常方便。使用<code>hexo generate</code>生成静态文件后，可以观察到图片已经拷贝到了对应的目录下。但是现在浏览的时候还不能够看到图片，可以看到是因为我们插入的时候用的是包含了一个与Markdown文件同名文件夹的相对路径，而生成的静态文件夹下没有那个同名文件夹所以造成了访问404。</p><p>具体可以按照下面的步骤操作：</p><ul><li>修改<code>post_asset_folder: true</code></li><li>生成一篇新的博客 <code>hexo new blog-name</code></li><li>通过typora向博客中插入一张图片，此时可以到<code>source/_posts</code>目录下看图片是否拷贝到了对应的目录</li><li><code>npm install hexo-image-link --save</code>安装插件</li></ul><h3 id="2、文章中的TOC设置，需要从二级标题开始。"><a href="#2、文章中的TOC设置，需要从二级标题开始。" class="headerlink" title="2、文章中的TOC设置，需要从二级标题开始。"></a>2、文章中的TOC设置，需要从二级标题开始。</h3><p>Typora文中的标题需要从二级标题开始显示，如果设置为一级标题，则在TOC中无法显示。 </p><img src="/2021/02/17/ge-ren-bo-ke-da-jian/1613565439255.png" class="" width="1613565439255"><p>最终显示情况：</p><p>参考</p><p><a href="https://www.cnblogs.com/cocowool/p/hexo-image-link.html">https://www.cnblogs.com/cocowool/p/hexo-image-link.html</a></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 其他 </tag>
+            
+        </tags>
       
     </entry>
     
