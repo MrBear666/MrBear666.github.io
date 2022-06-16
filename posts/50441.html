@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="MrBear">
 <meta property="og:description" content="0x01 准备工作1、GitHub账号注册一个GitHub账号，具体可参考GitHub申请账号 2、安装Git安装Git，具体可参考Git安装(Windows) 3、安装NodeJS安装NodeJs，具体可参考NodeJS安装及配置(Windows) 4、安装Hexo安装Hexo，具体命令如下： 12345678910111213141516#安装Hexonpm install -g hexo-c">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/posts/50441/image-20220616102900815.png">
-<meta property="og:image" content="http://example.com/posts/50441/image-20220616103305419.png">
-<meta property="og:image" content="http://example.com/posts/50441/2350558a10d94c8ab4959b04771d2bcc.png">
-<meta property="og:image" content="http://example.com/posts/50441/efdfd2d6cf5d4551af0eabfa565f4a1e.png">
-<meta property="og:image" content="http://example.com/posts/50441/image-20220616092852726.png">
-<meta property="og:image" content="http://example.com/posts/50441/image-20220616094545213.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/image-20220616102900815.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/image-20220616103305419.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/2350558a10d94c8ab4959b04771d2bcc.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/efdfd2d6cf5d4551af0eabfa565f4a1e.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/image-20220616092852726.png">
+<meta property="og:image" content="http://example.com/posts/50441.htm/50441/image-20220616094545213.png">
 <meta property="article:published_time" content="2022-06-15T11:09:53.000Z">
 <meta property="article:modified_time" content="2022-06-16T03:14:31.875Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/posts/50441/image-20220616102900815.png">
+<meta name="twitter:image" content="http://example.com/posts/50441.htm/50441/image-20220616102900815.png">
   
   
   
@@ -286,10 +286,10 @@
 
 <h2 id="5、Git与远程仓库GitHub配置SSH加密"><a href="#5、Git与远程仓库GitHub配置SSH加密" class="headerlink" title="5、Git与远程仓库GitHub配置SSH加密"></a>5、Git与远程仓库GitHub配置SSH加密</h2><p>具体的操作过程，可参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/eidolonw/p/13068373.html">配置SSH加密</a></p>
 <h2 id="6、图片设置"><a href="#6、图片设置" class="headerlink" title="6、图片设置"></a>6、图片设置</h2><p>1、配置Typora偏好设置，将图片文件保存路径设置为.&#x2F;${filename}，即保存与当前正在编辑的文件名相同的同级文件夹下，具体配置如下</p>
-<img src="/posts/50441/image-20220616102900815.png" srcset="/img/loading.gif" lazyload class="" title="image-20220616102900815">
+<img src="/posts/50441.htm/50441/image-20220616102900815.png" srcset="/img/loading.gif" lazyload class title="image-20220616102900815">
 
 <p>2、修改hexo中的_config.yml中的post_assert_folder的配置为true，这样，每次<code>hexo new page</code>生成新文章时吗，都会在文章文件同级目录创建一个与文章文件同名的文件夹，后续图片就会存在在此处。</p>
-<img src="/posts/50441/image-20220616103305419.png" srcset="/img/loading.gif" lazyload class="" title="image-20220616103305419">
+<img src="/posts/50441.htm/50441/image-20220616103305419.png" srcset="/img/loading.gif" lazyload class title="image-20220616103305419">
 
 <p>3、安装插件hexo-asset-img</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-asset-img --save<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
@@ -329,13 +329,13 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">1、安装hexo-deployer-git</span><br>npm install hexo-deployer-git --save<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">2、修改根目录下的 _config.yml，配置 GitHub 相关信息</span><br>deploy:<br>  type: git<br>  repo: https://github.com/yaorongke/yaorongke.github.io.git<br>  branch: main<br>  token: ghp_3KakcaPHerunNRyMerofcFd9pblU282FSbsY<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">其中 token 为 GitHub 的 Personal access tokens</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">3、部署到GitHub</span><br>hexo g -d<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">浏览器访问github网站，部署成功</span><br></code></pre></td></tr></table></figure>
 
 <p>其中token 为 GitHub 的 Personal access tokens，具体获取方式如下：</p>
-<img src="/posts/50441/2350558a10d94c8ab4959b04771d2bcc.png" srcset="/img/loading.gif" lazyload class="" title="请添加图片描述">
+<img src="/posts/50441.htm/50441/2350558a10d94c8ab4959b04771d2bcc.png" srcset="/img/loading.gif" lazyload class title="请添加图片描述">
 
 <h3 id="2-2-方式二"><a href="#2-2-方式二" class="headerlink" title="2.2 方式二"></a>2.2 方式二</h3><p>直接将 <code>public</code> 目录中的文件和目录推送至 <code>GitHub</code> 仓库和分支中。</p>
-<img src="/posts/50441/efdfd2d6cf5d4551af0eabfa565f4a1e.png" srcset="/img/loading.gif" lazyload class="" title="请添加图片描述">
+<img src="/posts/50441.htm/50441/efdfd2d6cf5d4551af0eabfa565f4a1e.png" srcset="/img/loading.gif" lazyload class title="请添加图片描述">
 
 <h1 id="0x04-问题记录"><a href="#0x04-问题记录" class="headerlink" title="0x04 问题记录"></a>0x04 问题记录</h1><h2 id="1、报错-FATAL-TypeError：-object-fromentries-is-not-a-function"><a href="#1、报错-FATAL-TypeError：-object-fromentries-is-not-a-function" class="headerlink" title="1、报错 FATAL TypeError： object.fromentries is not a function"></a>1、报错 FATAL TypeError： object.fromentries is not a function</h2><p><strong>问题现象：</strong></p>
-<img src="/posts/50441/image-20220616092852726.png" srcset="/img/loading.gif" lazyload class="" title="image-20220616092852726">
+<img src="/posts/50441.htm/50441/image-20220616092852726.png" srcset="/img/loading.gif" lazyload class title="image-20220616092852726">
 
 <p><strong>问题根因：</strong></p>
 <p>发现问题出现在<code>Node.js</code>的版本上。由于<code>Node.js 10</code>在2021年8月30日已停止服务，新版本的<code>Hexo</code>需要<code>Node.js</code>版本在12.0+。</p>
@@ -346,7 +346,7 @@
 
 
 <h2 id="2、报错-error：RPC-failed；curl-56-GnuTLS-recv-error"><a href="#2、报错-error：RPC-failed；curl-56-GnuTLS-recv-error" class="headerlink" title="2、报错 error：RPC failed；curl 56 GnuTLS recv error"></a>2、报错 error：RPC failed；curl 56 GnuTLS recv error</h2><p><strong>问题现象：</strong></p>
-<img src="/posts/50441/image-20220616094545213.png" srcset="/img/loading.gif" lazyload class="" title="image-20220616094545213">
+<img src="/posts/50441.htm/50441/image-20220616094545213.png" srcset="/img/loading.gif" lazyload class title="image-20220616094545213">
 
 <p><strong>问题根因：</strong></p>
 <p>git默认缓存大小不足导致的，解决方案是增大缓存空间。</p>
@@ -420,12 +420,6 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
-                    
-                      <a href="/posts/50440.html" title="GitHub + Hexo 搭建个人博客网站">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">GitHub + Hexo 搭建个人博客网站</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
                     
                   </article>
                   <article class="post-next col-6">
